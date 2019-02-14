@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import Menu from './components/Menu.js';
 
 let dummy = {
   "courses": [
@@ -43,7 +44,24 @@ class App extends Component {
     return (
       <div>
         <h1>Pitskun lounas</h1>
-        {dummy.courses.map((item,i) => <li key={i}>{item.title_fi}</li>)}
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+              <th>Lounas</th>
+              <th>Kasvisruoka</th>
+              <th>Deli</th>
+              <th>Jälkiruoka</th>
+            </tr>
+          </thead>
+          <tbody>
+            <Menu menu={dummy}/>
+            <Menu menu={dummy}/>
+            <Menu menu={dummy}/>
+            <Menu menu={dummy}/>
+            <Menu menu={dummy}/>
+          </tbody>
+        </table>
       </div>
     );
   }
